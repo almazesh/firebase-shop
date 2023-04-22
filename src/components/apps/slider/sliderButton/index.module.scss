@@ -1,0 +1,26 @@
+
+
+.slider_button {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: black;
+  color: white;
+  position: absolute;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border:0;
+  top: 42%;
+
+  &.prev_button {
+    left: 5%;
+  }
+
+  &.next_button {
+    right: 5%;
+  }
+}
+

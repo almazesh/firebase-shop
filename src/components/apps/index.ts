@@ -7,7 +7,9 @@ import Divider from "./forms/divider/Divider";
 import Errors from "./forms/errors/Errors";
 import { TextInput } from "./forms/textInput/TextInput";
 import Header from "./header/Header";
+import { Loader } from "./loader/Loader";
 import Logo from "./logo/Logo";
+import { Slider } from "./slider/Slider";
 
 
 export const Components = {
@@ -20,5 +22,7 @@ export const Components = {
   AuthSubmit,
   Errors,
   AuthNavigate,
-  AuthGoogle
+  AuthGoogle,
+  Loader,
+  Slider
 };

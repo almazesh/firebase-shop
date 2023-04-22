@@ -1,11 +1,12 @@
 
 import React from 'react';
 import { Route, Routes as Switch } from "react-router-dom";
-import { Components } from '../components';
+import { Components } from '../components/apps';
 import { Routers } from '../pages';
 import { PATH } from '../service/Path';
 
 export const Routes: React.FunctionComponent = () => {
+
   return (
     <React.Fragment>
       <Components.Header />

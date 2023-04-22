@@ -1,7 +1,7 @@
 import React from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { useForm } from 'react-hook-form';
-import { Components } from '../../../components';
+import { Components } from '../../../components/apps';
 import { FormsInstruments } from '../../../helpers/forms';
 import { auth } from "../../../firebase/firebase";
 import { Hooks } from '../../../hooks';

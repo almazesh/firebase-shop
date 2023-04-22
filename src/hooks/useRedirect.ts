@@ -9,11 +9,23 @@ const useRedirect = () => {
   const navigate = useNavigate();
 
   const goToLogin = React.useCallback(() => 
-    navigate(PATH.ConnectedAuthPath.login), [navigate])
+    navigate(PATH.ConnectedAuthPath.login), [navigate]);
+
+  const goToHome = React.useCallback(() => 
+    navigate(PATH.ConnectedAuthPath.home) , [navigate]);
+
+  const goToProfile = React.useCallback(() => 
+    navigate(PATH.ConnectedAuthPath.profile) , [navigate]);
+    
+  const goToAdmin = React.useCallback(() => 
+    navigate(PATH.AdminPath.admin), [navigate]);
 
   return {
     actions: {
-      goToLogin
+      goToLogin,
+      goToHome,
+      goToProfile,
+      goToAdmin
     }
   }
 }

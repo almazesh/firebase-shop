@@ -1,0 +1,41 @@
+
+
+.screen_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  &_card {
+    width: 400px;
+    height: 250px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+      margin: 0;
+      margin-bottom: 20px;
+    }
+
+    &_btns {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+
+      button {
+        width: 40%;
+        padding: 10px 0;
+        border:0;
+        background-color: rgb(32, 11, 136);
+        color: white;
+        box-shadow: 0 0 5px rgb(32, 11, 136) ;
+        cursor: pointer;
+        border-radius: 15px;
+      }
+    }
+  }
+}
