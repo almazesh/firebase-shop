@@ -1,0 +1,66 @@
+
+
+.profile_page {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  &_wrapper {
+    text-align: center;
+    margin-top: 100px;
+    &_info {
+      h1 {
+        color: #0091d9;
+        font-weight: 800;
+      }
+
+      p {
+        color: white;
+      }
+    }
+  }
+
+
+  .signOut {
+    width: 100px;
+    padding: 15px 0;
+    color: white;
+    background-color: rgb(125, 49, 49);
+    border:0;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 5px red;
+    top:0%;
+    right: 5%;
+    position: absolute;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      font-size: 17px;
+    }
+  }
+
+  .admin {
+    width: 100px;
+    padding: 15px 0;
+    color: white;
+    background-color: rgb(27, 4, 4);
+    border:0;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgb(19, 1, 1);
+    top:0%;
+    right: 15%;
+    position: absolute;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      font-size: 17px;
+    }
+  }
+}

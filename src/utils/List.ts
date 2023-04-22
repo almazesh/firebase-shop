@@ -1,5 +1,5 @@
-import { ICONS } from "../icons/Icons"
-import { PATH } from "../service/Path"
+import { ICONS } from "../icons/Icons";
+import { PATH } from "../service/Path";
 
 
 const HeaderTopIcons = [
@@ -22,7 +22,7 @@ const HeaderTopIcons = [
     caption: "Sign Up",
     route: PATH.ConnectedAuthPath.register,
   },
-]
+];
 
 const HeaderBottomElements = [
   {
@@ -36,14 +36,67 @@ const HeaderBottomElements = [
   {
     id:41,
     caption: "Profile",
+    route: PATH.ConnectedAuthPath.profile
   },
   {
     id:34,
     caption: "Products",
+    route: PATH.ConnectedAuthPath.products
+  },
+];
+
+
+const SliderList = [
+  {
+    id:1,
+    img: "https://free4kwallpapers.com/uploads/originals/2015/10/03/winter-europe-street-snow-shopping.jpg"
+  },
+  {
+    id:2,
+    img: "https://wallpaperaccess.com/full/418794.jpg"
+  },
+];
+
+
+
+const adminList = [
+  {
+    id:1,
+    title: "Profile",
+    route: PATH.AdminPath.profile,
+    icons: ICONS.ImProfile
+  },
+  {
+    id:2,
+    title: "Products",
+    route: PATH.AdminPath.products,
+    icons: ICONS.MdProductionQuantityLimits
+  },
+  {
+    id:3,
+    title: "Contacts",
+    route: PATH.AdminPath.contacts,
+    icons: ICONS.MdContacts
+  },
+  {
+    id:4,
+    title: "Categories",
+    route: PATH.AdminPath.category,
+    icons: ICONS.TbCategory
+  },
+  {
+    id:5,
+    title: "Slider",
+    route: PATH.AdminPath.slider,
+    icons: ICONS.TfiLayoutSlider
   },
 ]
 
+
+
 export const LIST = {
   HeaderTopIcons,
-  HeaderBottomElements
-}
+  HeaderBottomElements,
+  SliderList,
+  adminList
+};
