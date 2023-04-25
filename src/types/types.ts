@@ -1,4 +1,5 @@
 import React from "react"
+import { UserMetadata } from "firebase/auth"
 
 
 
@@ -18,6 +19,7 @@ export interface IUser {
   displayName: string
   avatar: string
   email: string
+  dates: UserMetadata | undefined
 }
 
 export interface IContext {

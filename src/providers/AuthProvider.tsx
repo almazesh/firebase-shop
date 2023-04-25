@@ -61,6 +61,7 @@ const AuthProvider: React.FunctionComponent<IProvider> = ({children}) => {
         displayName: res?.displayName || "",
         email: res?.email || "",
         avatar: res?.photoURL || "",
+        dates: res?.metadata
       })
     })
   }, []);
