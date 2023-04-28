@@ -1,4 +1,7 @@
 import React from 'react';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { Providers } from '../providers';
 import Admin from '../routes/Admin';
 import { Routes } from '../routes/Routes';
@@ -6,7 +9,7 @@ import { Routes } from '../routes/Routes';
 import cls from "./index.module.scss";
 
 const Screen: React.FunctionComponent<any> = () => {
-  const { state, changeState, setState } = Providers.useAuth();
+  const { state, changeState } = Providers.useAuth();
 
   return (
     <React.Fragment>
@@ -32,6 +35,8 @@ const Screen: React.FunctionComponent<any> = () => {
       {state === "web" && <Routes />}
 
       {state === "admin" && <Admin />}
+
+      <ToastContainer />
     </React.Fragment>
   )
 };

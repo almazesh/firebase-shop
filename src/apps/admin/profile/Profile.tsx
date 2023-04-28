@@ -2,6 +2,7 @@
 import React from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
 
+import { AdminComponents } from '../../../components/admin';
 import { Components } from '../../../components/apps';
 import { auth } from '../../../firebase/firebase';
 import { Providers } from '../../../providers';
@@ -61,7 +62,7 @@ const Profile: React.FunctionComponent<any> = () => {
           </Components.Divider>
 
           <Components.Divider>
-            <button type='submit'>Edit Credentials</button>
+            <AdminComponents.AdminButton title="Edit profile"/>
           </Components.Divider>
         </form>
       </section>

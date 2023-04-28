@@ -26,8 +26,9 @@ export interface IContext {
   token: string | null | undefined
   user: IUser | null
   setRender: TypeSetState<string>
-  signOut: React.MouseEventHandler<HTMLButtonElement>
+  logOut: React.MouseEventHandler<HTMLButtonElement>
   state: string | null
   setState: TypeSetState<string | null>
   changeState: React.RefCallback<any>
+  render: string
 }

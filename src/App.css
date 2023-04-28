@@ -99,3 +99,15 @@ h1,h2,h3,h4,h5,h6 {
 .css-b62m3t-container {
   width: 455px !important;
 } 
+
+
+
+
+.danger-toast {
+  background-color: rgb(193, 59, 59);
+  color: white;
+}
+
+.progress {
+  background: white;
+}

@@ -10,7 +10,7 @@ const Profile = () => {
   const { 
     user, 
     token, 
-    signOut, 
+    logOut, 
     changeState 
   } = Providers.useAuth();
 
@@ -43,7 +43,7 @@ const Profile = () => {
           <ICONS.MdAdminPanelSettings />
           Admin
         </button>
-        <button onClick={signOut} className={cls.signOut}>
+        <button onClick={logOut} className={cls.signOut}>
           <ICONS.VscSignOut />
           Sign Out
         </button>
