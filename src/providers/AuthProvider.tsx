@@ -3,7 +3,7 @@ import React from 'react';
 import { AuthContext } from '../contexts/AuthContext';
 import { auth } from '../firebase/firebase';
 import { IUser } from '../types/types';
-import { onAuthStateChanged } from 'firebase/auth';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { Hooks } from '../hooks';
 
 interface IProvider {
@@ -61,16 +61,18 @@ const AuthProvider: React.FunctionComponent<IProvider> = ({children}) => {
         displayName: res?.displayName || "",
         email: res?.email || "",
         avatar: res?.photoURL || "",
+        dates: res?.metadata
       })
     })
   }, []);
 
-  const signOut = React.useCallback(() => {
+  const logOut = React.useCallback(() => {
     localStorage.clear();
     setUser(null);
     setToken(undefined);
     setRender("Exit!");
     changeState("screen");
+    signOut(auth);
   }, [changeState]); 
 
   React.useEffect(() => {
@@ -82,19 +84,21 @@ const AuthProvider: React.FunctionComponent<IProvider> = ({children}) => {
     token,
     user,
     setRender,
-    signOut,
+    logOut,
     state,
     setState,
-    changeState
+    changeState,
+    render
   }), 
     [
       token,
       user,
       setRender,
-      signOut,
+      logOut,
       state,
       setState,
-      changeState
+      changeState,
+      render
     ]
   );
 

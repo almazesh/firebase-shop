@@ -1,6 +1,7 @@
 import React from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { useForm } from 'react-hook-form';
+import { FieldValues, useForm } from 'react-hook-form';
+
 import { Components } from '../../../components/apps';
 import { FormsInstruments } from '../../../helpers/forms';
 import { auth } from "../../../firebase/firebase";
@@ -22,7 +23,7 @@ const Login: React.FunctionComponent = () => {
     mode:"onSubmit"
   });
 
-  const handleLogin = (data: any) => {
+  const handleLogin = (data: FieldValues) => {
     signInWithEmailAndPassword(auth, data.email, data.password)
       .then((res: any) => {
         localStorage.setItem("accessToken", res.user.accessToken);

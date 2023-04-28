@@ -1,15 +1,34 @@
 
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+
 import { Providers } from '../../../providers';
 import { LIST } from '../../../utils/List';
 
 import cls from "./index.module.scss";
 
-const Sidebar: React.FunctionComponent<any> = () => {
-  const { changeState } = Providers.useAuth();
+interface IAdminLeftList {
+  id: number
+  title: string | null
+  img: string
+  event: () => void | undefined
+}
 
-  const adminSidebarLeftList = [
+const Sidebar: React.FunctionComponent<any> = () => {
+  const [ava,setAvatar] = React.useState<string>("");
+  const NoneAvatar = "https://cdn.pixabay.com/photo/2018/11/13/21/43/avatar-3814049__340.png";
+
+  const { changeState, user } = Providers.useAuth();
+
+  React.useEffect(() => {
+    if(user?.avatar) {
+      setAvatar(user?.avatar);
+    } else {
+      setAvatar(NoneAvatar);
+    }
+  }, [user]);
+
+  const adminSidebarLeftList: IAdminLeftList[] = [
     {
       id:1,
       title: "web",
@@ -18,7 +37,16 @@ const Sidebar: React.FunctionComponent<any> = () => {
         changeState("web")
       }
     },
-  ]
+
+    {
+      id:2,
+      title: null,
+      img: ava,
+      event: () => {
+
+      }
+    },
+  ];
 
   return (
     <React.Fragment>

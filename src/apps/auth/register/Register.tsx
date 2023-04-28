@@ -1,6 +1,6 @@
 import React from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { useForm } from 'react-hook-form';
+import { FieldValues, useForm } from 'react-hook-form';
 import { Components } from '../../../components/apps';
 import { FormsInstruments } from '../../../helpers/forms';
 import { auth } from "../../../firebase/firebase";
@@ -20,7 +20,7 @@ const Register: React.FunctionComponent = () => {
     mode:"onSubmit"
   });
 
-  const handleRegister = (data: any) => {
+  const handleRegister = (data: FieldValues) => {
     createUserWithEmailAndPassword(auth, data.email, data.password)
       .then((res: any) => {
         localStorage.setItem("accessToken", res.user.accessToken);

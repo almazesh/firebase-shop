@@ -68,3 +68,46 @@ h1,h2,h3,h4,h5,h6 {
 .admin-layout main {
   width: 73%;
 }
+
+
+.css-13cymwt-control {
+  width: 100% !important;
+  padding: 8px 5px;
+  border-radius: 8px !important;
+  background: none !important;
+  border:2px solid #eee !important;
+  color: white !important;
+  outline: 0;
+  font-size: 14px;
+}
+
+.css-t3ipsp-control {
+  width: 100% !important;
+  padding: 8px 5px;
+  border-radius: 8px !important;
+  background: none !important;
+  border:2px solid #eee !important;
+  color: white !important;
+  outline: 0;
+  font-size: 14px;
+}
+
+.css-1dimb5e-singleValue {
+  color: white !important;
+}
+
+.css-b62m3t-container {
+  width: 455px !important;
+} 
+
+
+
+
+.danger-toast {
+  background-color: rgb(193, 59, 59);
+  color: white;
+}
+
+.progress {
+  background: white;
+}

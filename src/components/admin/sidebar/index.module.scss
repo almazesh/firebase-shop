@@ -41,8 +41,11 @@
       }
 
       img {
-        width: 50%;
+        width: 40px;
         transition: .5s;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 50%;
       }
 
       &:hover {
