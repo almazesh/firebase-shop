@@ -5,7 +5,7 @@ import { setDoc } from 'firebase/firestore';
 
 import { AdminComponents } from '../../../components/admin';
 import { Components } from '../../../components/apps';
-import { db, firestoreDoc } from '../../../firebase/firebase';
+import { db, firestoreDoc } from '../../../firebase/firebase.config';
 import { Providers } from '../../../providers';
 
 import cls from "./index.module.scss";

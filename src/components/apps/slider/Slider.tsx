@@ -9,18 +9,19 @@ import
   import { toast } from 'react-toastify';
 
 import { SliderButton } from './sliderButton/SliderButton';
-import { db, firestoreDoc } from '../../../firebase/firebase';
+import { db, firestoreDoc } from '../../../firebase/firebase.config';
 import { Providers } from '../../../providers';
+import { Components } from '..';
+import SliderDots from './sliderDots/SliderDots';
 
 import cls from "./index.module.scss";
-import { Components } from '..';
 
 interface ISlider {
   isAdmin: boolean
 };
 
 export const Slider: React.FunctionComponent<ISlider> = ({ isAdmin }) => {
-  const [currentSlider, setCurrentSlider] = React.useState(0);
+  const [currentSlider, setCurrentSlider] = React.useState<number>(0);
   const [slideData, setSlideData] = React.useState<any>([]);
   const { render, setRender } = Providers.useAuth();
   const notifyErrorSlide = () => 
@@ -81,35 +82,61 @@ export const Slider: React.FunctionComponent<ISlider> = ({ isAdmin }) => {
   return (
     <React.Fragment>
       <section className={cls.slider_wrapper}>
-        {slideData?.length === 0 && <Components.Loader fullHeight='100%'/>}
+        <div className={cls.slider_wrapper_content}>
+          {slideData?.length === 0 && <Components.Loader fullHeight='100%'/>}
 
-        {slideData?.map((el: any, i: any) => {
-          const data = el?.doc.data();
+          {slideData?.map((el: any, i: any) => {
+            const data = el?.doc.data();
 
-          return (
-            <img 
-              src={data.image} 
-              alt="" 
-              key={i}
-              className={currentSlider === i ? cls.activeSlide : null}
-            />
-          )
-        })}
+            return (
+              <img 
+                src={data.image} 
+                alt="" 
+                key={i}
+                className={currentSlider === i ? cls.activeSlide : null}
+              />
+            )
+          })}
 
-        <SliderButton handleClick={prevSlide} direct='prev'/>
-        <SliderButton handleClick={nextSlide} direct='next'/>
+          {
+            slideData?.length > 1 && (
+              <React.Fragment>
+                <SliderButton handleClick={prevSlide} direct='prev'/>
+                <SliderButton handleClick={nextSlide} direct='next'/>
+              </React.Fragment>
+            )
+          }
+
+          {
+            isAdmin && (
+              <React.Fragment>
+                {
+                  slideData?.length !== 0 && (
+                    <div className={cls.delete_button}>
+                      <button onClick={deleteSlider}>Delete slide</button>
+                    </div>
+                  )
+                }
+              </React.Fragment>
+            )
+          }
+        </div>
 
         {
-          isAdmin && (
-            <React.Fragment>
+          slideData?.length > 1 && (
+            <div className={cls.dots_inline}>
               {
-                slideData?.length !== 0 && (
-                  <div className={cls.delete_button}>
-                    <button onClick={deleteSlider}>Delete slide</button>
-                  </div>
+                Array.from({length: slideData?.length}).map((el , i) => 
+                  <SliderDots 
+                    key={i} 
+                    cls={cls}
+                    currentSlider={currentSlider}
+                    setCurrentSlider={setCurrentSlider}
+                    i={i}
+                  />
                 )
               }
-            </React.Fragment>
+            </div>
           )
         }
       </section>
