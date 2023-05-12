@@ -3,7 +3,7 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { FieldValues, useForm } from 'react-hook-form';
 import { Components } from '../../../components/apps';
 import { FormsInstruments } from '../../../helpers/forms';
-import { auth } from "../../../firebase/firebase";
+import { auth } from "../../../firebase/firebase.config";
 import { Hooks } from '../../../hooks';
 
 import cls from "./index.module.scss";

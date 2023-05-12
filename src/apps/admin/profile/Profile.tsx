@@ -4,7 +4,7 @@ import { FieldValues, useForm } from 'react-hook-form';
 
 import { AdminComponents } from '../../../components/admin';
 import { Components } from '../../../components/apps';
-import { auth } from '../../../firebase/firebase';
+import { auth } from '../../../firebase/firebase.config';
 import { Providers } from '../../../providers';
 
 import cls from "./index.module.scss";

@@ -6,12 +6,12 @@ import { UserMetadata } from "firebase/auth"
 export type TypeSetState<T> = React.Dispatch<React.SetStateAction<T>>
 
 export interface IFireConfig {
-  apiKey: string,
-  authDomain: string,
-  projectId: string,
-  storageBucket: string,
-  messagingSenderId: string,
-  appId: string
+  apiKey: string | undefined,
+  authDomain: string | undefined,
+  projectId: string | undefined,
+  storageBucket: string | undefined,
+  messagingSenderId: string | undefined,
+  appId: string | undefined
 }
 
 

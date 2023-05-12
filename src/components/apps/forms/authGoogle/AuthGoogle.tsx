@@ -1,6 +1,6 @@
 import React from 'react';
 import { signInWithPopup } from 'firebase/auth';
-import { auth, joinWithGoogle } from '../../../../firebase/firebase';
+import { auth, joinWithGoogle } from '../../../../firebase/firebase.config';
 import { Hooks } from '../../../../hooks';
 import { Providers } from '../../../../providers';
 

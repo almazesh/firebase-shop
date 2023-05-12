@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { AuthContext } from '../contexts/AuthContext';
-import { auth } from '../firebase/firebase';
+import { auth } from '../firebase/firebase.config';
 import { IUser } from '../types/types';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { Hooks } from '../hooks';

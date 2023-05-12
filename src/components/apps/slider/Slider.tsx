@@ -9,7 +9,7 @@ import
   import { toast } from 'react-toastify';
 
 import { SliderButton } from './sliderButton/SliderButton';
-import { db, firestoreDoc } from '../../../firebase/firebase';
+import { db, firestoreDoc } from '../../../firebase/firebase.config';
 import { Providers } from '../../../providers';
 import { Components } from '..';
 import SliderDots from './sliderDots/SliderDots';
