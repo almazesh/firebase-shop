@@ -32,3 +32,10 @@ export interface IContext {
   changeState: React.RefCallback<any>
   render: string
 }
+
+export interface ISliderDots {
+  cls: any
+  i: number
+  currentSlider: number
+  setCurrentSlider: TypeSetState<number>
+}
